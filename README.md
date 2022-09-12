@@ -53,7 +53,7 @@ try {
     $objClientResp = new ClientResponse(new AccInfoResponse(), $respData);
 
     /**
-     * 这里声明的目的是为了 PHPStorm IDE 语法提示
+     * 这里声明的目的是为了 IDE (如 PhpStorm) 语法提示
      * @var AccInfoResponse $objResultResp
      */
     $objResultResp = $objClientResp->fetchResult();
@@ -65,3 +65,19 @@ try {
 
 ```
 
+# 接口
+
+| API             | 请求类                   | 响应类                    |
+|-----------------|-----------------------|------------------------|
+| 用户注册            | -                     | -                      |
+| 用户信息查询          | -                     | -                      |
+| 用户信息变更 - 注册手机号  | -                     | -                      |
+| 用户信息变更 - 影像件    | -                     | -                      |
+| 用户信息变更 - 拓展业务类型 | -                     | -                      |
+| 用户信息变更 - 结算卡信息  | -                     | -                      |
+| 用户账户开户          | -                     | -                      |
+| 用户账户开户（活体认证）    | -                     | -                      |
+| 订单支付            | -                     | -                      |
+| 批次订单号查询订单       | -                     | -                      |
+| 子订单详情查询         | -                     | -                      |
+| 商户信息查询          | AccInfoRequest::class | AccInfoResponse::class |
