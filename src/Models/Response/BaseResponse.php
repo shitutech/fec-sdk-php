@@ -46,6 +46,7 @@ abstract class BaseResponse
                     case 'array':
                         $value = (array)$value;
                         break;
+                    case 'NULL':
                     case 'object':
                         break;
                     case 'integer':
@@ -55,12 +56,9 @@ abstract class BaseResponse
                     case "double":
                         $value = floatval($value);
                         break;
-                    case 'NULL':
-                        $value = null;
-                        break;
                     case 'string':
                     default:
-                        $value = trim($value);
+                        $value = $value === null ? '' : trim($value);
                         break;
                 }
 
