@@ -69,12 +69,12 @@ try {
 
 | API             | 请求类                   | 响应类                    |
 |-----------------|-----------------------|------------------------|
-| 用户注册            | -                     | -                      |
-| 用户信息查询          | -                     | -                      |
-| 用户信息变更 - 注册手机号  | -                     | -                      |
-| 用户信息变更 - 影像件    | -                     | -                      |
-| 用户信息变更 - 拓展业务类型 | -                     | -                      |
-| 用户信息变更 - 结算卡信息  | -                     | -                      |
+| 用户注册            | UserRegisterRequest::class | UserRegisterResponse::class |
+| 用户信息查询          | UserQueryRequest::class | UserQueryResponse::class |
+| 用户信息变更 - 注册手机号  | UserUpdatePhoneRequest::class | UserUpdateResponse::class |
+| 用户信息变更 - 影像件    | UserUpdateImageRequest::class | UserUpdateResponse::class |
+| 用户信息变更 - 拓展业务类型 | UserUpdateExpandRequest::class | UserUpdateResponse::class |
+| 用户信息变更 - 结算卡信息  | UserUpdateCardRequest::class | UserUpdateResponse::class |
 | 用户账户开户          | -                     | -                      |
 | 用户账户开户（活体认证）    | -                     | -                      |
 | 订单支付            | -                     | -                      |

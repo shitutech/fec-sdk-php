@@ -60,4 +60,61 @@ final class UtilHelper
 
         return implode('', $arr);
     }
+
+    /**
+     * 手机号验证
+     * @param string $mobile
+     * @param bool $disableException 是否抛异常，默认抛
+     * @return bool
+     * @throws \Exception
+     */
+    public static function verifyMobile(string $mobile, bool $disableException = false): bool
+    {
+        $checkRet = !trim($mobile) || !preg_match("/^1\d{10}$/", $mobile);
+
+        if (!$disableException && $checkRet) {
+            throw new \Exception('手机号不合法', 1000);
+        }
+
+        return $checkRet;
+    }
+
+    /**
+     * 校验身份证号码
+     * @param string $number
+     * @param bool $disableException 是否抛异常，默认抛
+     * @return bool
+     * @throws \Exception
+     */
+    public static function verifyIdCard(string $number, bool $disableException = false): bool
+    {
+        $number = trim($number);
+        if (empty($number) || strlen($number) != 18 || !preg_match("/^\d{17}[\dxX]$/", $number)) {
+            if ($disableException) {
+                return false;
+            }
+
+            throw new \Exception('身份证不合法', 1000);
+        }
+
+        $factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+        $sum = 0;
+
+        for ($i = 0; $i < 17; $i++) {
+            $sum += $number[$i] * $factor[$i];
+        }
+
+        $modulo = $sum % 11;
+
+        $checker = '10X98765432';
+        if ($checker[$modulo] != strtoupper($number[17])) {
+            if ($disableException) {
+                return false;
+            }
+
+            throw new \Exception('身份证不合法', 1000);
+        }
+
+        return true;
+    }
 }

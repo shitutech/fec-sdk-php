@@ -30,7 +30,7 @@ final class AccInfoRequest extends BaseRequest
     {
         $payPass = trim($payPass);
 
-        if ($payPass != Constants::PAY_PASS_ZB && $payPass != Constants::PAY_PASS_ALIPAY) {
+        if (!array_key_exists($payPass, Constants::PAY_PASS_NAME)) {
             throw new \Exception("支付通道参数不合法", 1000);
         }
 
