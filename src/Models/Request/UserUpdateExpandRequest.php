@@ -2,6 +2,7 @@
 
 namespace Shitutech\Fec\Models\Request;
 
+use Shitutech\Fec\ClientConfig;
 use Shitutech\Fec\Constants;
 use Shitutech\Fec\Helpers\UtilHelper;
 
@@ -9,7 +10,7 @@ use Shitutech\Fec\Helpers\UtilHelper;
  * Class UserUpdateExpandRequest 用户信息变更 - 拓展业务类型
  * @package Shitutech\Fec\Models\Request
  */
-class UserUpdateExpandRequest extends BaseRequest
+final class UserUpdateExpandRequest extends BaseRequest
 {
     protected $apiPath = '/api/fec/acct/update';
 
@@ -54,22 +55,20 @@ class UserUpdateExpandRequest extends BaseRequest
     protected $busType = '';
 
     /**
+     * UserUpdateExpandRequest constructor.
+     */
+    public function __construct()
+    {
+        $this->merchantNo = ClientConfig::getInstance()->getMerchantNo();
+    }
+
+    /**
      * @param string $memberId
      * @return UserUpdateExpandRequest
      */
     public function setMemberId(string $memberId): self
     {
         $this->memberId = trim($memberId);
-        return $this;
-    }
-
-    /**
-     * @param string $merchantNo
-     * @return UserUpdateExpandRequest
-     */
-    public function setMerchantNo(string $merchantNo): self
-    {
-        $this->merchantNo = trim($merchantNo);
         return $this;
     }
 

@@ -2,6 +2,7 @@
 
 namespace Shitutech\Fec\Models\Request;
 
+use Shitutech\Fec\ClientConfig;
 use Shitutech\Fec\Constants;
 use Shitutech\Fec\Helpers\UtilHelper;
 
@@ -9,7 +10,7 @@ use Shitutech\Fec\Helpers\UtilHelper;
  * Class UserUpdateCardRequest 用户信息变更 - 结算卡信息
  * @package Shitutech\Fec\Models\Request
  */
-class UserUpdateCardRequest extends BaseRequest
+final class UserUpdateCardRequest extends BaseRequest
 {
     protected $apiPath = '/api/fec/acct/update';
 
@@ -69,22 +70,20 @@ class UserUpdateCardRequest extends BaseRequest
     protected $imgBank = '';
 
     /**
+     * UserUpdateCardRequest constructor.
+     */
+    public function __construct()
+    {
+        $this->merchantNo = ClientConfig::getInstance()->getMerchantNo();
+    }
+
+    /**
      * @param string $memberId
      * @return UserUpdateCardRequest
      */
     public function setMemberId(string $memberId): self
     {
         $this->memberId = trim($memberId);
-        return $this;
-    }
-
-    /**
-     * @param string $merchantNo
-     * @return UserUpdateCardRequest
-     */
-    public function setMerchantNo(string $merchantNo): self
-    {
-        $this->merchantNo = trim($merchantNo);
         return $this;
     }
 

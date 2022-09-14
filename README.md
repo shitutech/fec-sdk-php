@@ -75,9 +75,9 @@ try {
 | 用户信息变更 - 影像件    | UserUpdateImageRequest::class | UserUpdateResponse::class |
 | 用户信息变更 - 拓展业务类型 | UserUpdateExpandRequest::class | UserUpdateResponse::class |
 | 用户信息变更 - 结算卡信息  | UserUpdateCardRequest::class | UserUpdateResponse::class |
-| 用户账户开户          | -                     | -                      |
-| 用户账户开户（活体认证）    | -                     | -                      |
-| 订单支付            | -                     | -                      |
-| 批次订单号查询订单       | -                     | -                      |
-| 子订单详情查询         | -                     | -                      |
+| 用户账户开户          | UserOpenRequest::class | UserOpenResponse::class |
+| 用户账户开户（活体认证）    | UserOpenVideoRequest::class | UserOpenResponse::class |
+| 订单支付            | OrderPayRequest::class  | OrderPayResponse::class |
+| 批次订单号查询订单       | OrderQueryBatchRequest::class  | OrderQueryBatchResponse::class |
+| 子订单详情查询         | OrderQueryDetailRequest::class | OrderQueryDetailResponse::class |
 | 商户信息查询          | AccInfoRequest::class | AccInfoResponse::class |

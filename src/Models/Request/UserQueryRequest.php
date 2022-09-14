@@ -9,7 +9,7 @@ use Shitutech\Fec\Helpers\UtilHelper;
  * Class UserQueryResponse 用户信息查询
  * @package Shitutech\Fec\Models\Request
  */
-class UserQueryRequest extends BaseRequest
+final class UserQueryRequest extends BaseRequest
 {
     protected $apiPath = '/api/fec/acct/query';
 

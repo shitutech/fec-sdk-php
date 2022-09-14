@@ -51,4 +51,13 @@ final class Constants
         self::CHANGE_TYPE_EXPAND => '拓展业务类型',
         self::CHANGE_TYPE_CARD => '变更结算卡信息',
     ];
+
+    //costUndertaker 手续费承担方 1:企业承担 2:客户承担
+    const COST_UNDER_TAKER_ENTERPRISE = '1';
+    const COST_UNDER_TAKER_CUSTOMER = '2';
+
+    const COST_UNDER_TAKER_NAME = [
+        self::COST_UNDER_TAKER_ENTERPRISE => '企业承担',
+        self::COST_UNDER_TAKER_CUSTOMER => '客户承担',
+    ];
 }

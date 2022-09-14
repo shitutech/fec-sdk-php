@@ -6,7 +6,7 @@ namespace Shitutech\Fec\Models\Response;
  * Class UserQueryResponse 用户信息查询接口
  * @package Shitutech\Fec\Models\Response
  */
-class UserQueryResponse extends BaseResponse
+final class UserQueryResponse extends BaseResponse
 {
     /**
      * @var string 姓名 （查询类型 1 返回）
