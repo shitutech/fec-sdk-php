@@ -9,10 +9,12 @@ final class Constants
     // payPass 支付通道
     const PAY_PASS_ZB = '1';
     const PAY_PASS_ALIPAY = '2';
+    const PAY_PASS_ZHAO_HANG = '4';
 
     const PAY_PASS_NAME = [
         self::PAY_PASS_ZB => '众邦',
         self::PAY_PASS_ALIPAY => '支付宝',
+        self::PAY_PASS_ZHAO_HANG => '招商银行',
     ];
 
     // busType 业务类型 1:委托代征;2:个体户注册(分包);3:自然人代开;4:临时税务登记
