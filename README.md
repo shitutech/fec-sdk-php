@@ -28,7 +28,40 @@ JAVA SDK 请参考： https://github.com/blinkingso/flexible-sdk-java
 composer.phar require shitutech/fec
 ```
 
-## 调用
+## 调用方式一（强烈推荐，旧版本，v2版本皆可用。v2版本目前只能用这个）
+
+```php
+use Shitutech\Fec\Helpers\remoteHelper;
+
+//RSA商户秘钥
+$privateKey = 'xxx';
+//系统公钥
+$publicKey = 'xxx';
+
+//以商户信息查询接口为例 demo
+$domain = 'https://fec.51wanquan.com';//域名
+$url = $domain . '/api/fec/v2/acct/info';//接口完整路由
+$merchantNo = 'xxx';//商户号，必须要的参数
+//对应接口业务参数
+$data = [
+    'accountType' => '2',
+    'payPass' => '4',
+    'providerNo' => 'S10047',
+];
+
+try {
+    //只需调用一个接口即可
+    $returnData = RemoteHelper::index($privateKey, $publicKey, $merchantNo, $data, $url);
+
+    var_dump($returnData);
+} catch (Exception $e) {
+    var_dump($e->getCode() . "::" . $e->getMessage());
+}
+
+```
+
+
+## 调用方式二（v2版本未更新，调用复杂，不推荐）
 
 ```php
 use Shitutech\Fec\ClientConfig;
@@ -65,7 +98,7 @@ try {
 
 ```
 
-# 接口
+# 接口（只适用于旧版本。v2版本不可用，不推荐）
 
 | API             | 请求类                   | 响应类                    |
 |-----------------|-----------------------|------------------------|
