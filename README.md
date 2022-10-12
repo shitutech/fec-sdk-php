@@ -60,6 +60,11 @@ try {
 
 ```
 
+## 调用方式一特别说明
+```
+为了方便查看日志，本sdk添加了此功能，日志目录：/data/log，文件名称为php_sdk_年月日.log，如php_sdk_20221012.log
+如果有报错如：failed to open stream: No such file or directory，那需要您手动创建目录：/data/log
+```
 
 ## 调用方式二（v2版本未更新，调用复杂，不推荐）
 
