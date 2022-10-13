@@ -38,15 +38,13 @@ $privateKey = 'xxx';
 //系统公钥
 $publicKey = 'xxx';
 
-//以商户信息查询接口为例 demo
+//查询通道支持的银行列表
 $domain = 'https://fec.51wanquan.com';//域名
-$url = $domain . '/api/fec/v2/acct/info';//接口完整路由
+$url = $domain . '/api/fec/v2/bank/list';//接口完整路由
 $merchantNo = 'xxx';//商户号，必须要的参数
 //对应接口业务参数
 $data = [
-    'accountType' => '2',
     'payPass' => '4',
-    'providerNo' => 'S10047',
 ];
 
 try {
