@@ -258,7 +258,7 @@ class RemoteHelper
             $logParams = ['inParams' => $postData, 'requestParams' => $data, 'outParams' => $responseData];
             $logMessage = "开始\n";
             $logMessage .= var_export($logParams, true) . "\n结束\n";
-            error_log($logMessage, 3, '/data/log1/php_sdk' . '_' . date('Ymd') . '.log');
+            error_log($logMessage, 3, '/data/log/php_sdk' . '_' . date('Ymd') . '.log');
 
             //校验响应
             self::checkResult($responseData);
