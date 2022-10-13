@@ -52,8 +52,8 @@ $data = [
 try {
     //只需调用一个接口即可
     $returnData = RemoteHelper::index($privateKey, $publicKey, $merchantNo, $data, $url);
-
-    var_dump($returnData);
+    echo $returnData;
+    //var_dump($returnData);
 } catch (Exception $e) {
     var_dump($e->getCode() . "::" . $e->getMessage());
 }

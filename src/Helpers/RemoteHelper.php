@@ -261,7 +261,7 @@ class RemoteHelper
             error_log($logMessage, 3, '/data/log/php_sdk' . '_' . date('Ymd') . '.log');
 
             //校验响应
-            self::checkResult($responseData);
+            //self::checkResult($responseData);
 
             return $responseData;
         } catch (Exception $e) {
